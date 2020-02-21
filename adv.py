@@ -121,8 +121,7 @@ while len(map_graph) < len(room_graph):
         map_graph[room_id][random_direction] = player.current_room.id
         # assign previous room id to current room exit value with flipped direction
         flipped_direction = {'n': 's', 's': 'n', 'e': 'w', 'w': 'e'}
-        map_graph[player.current_room.id][flipped_direction[random_direction]
-                                          ] = room_id
+        map_graph[player.current_room.id][flipped_direction[random_direction]] = room_id
     else:
         # use BFS to find nearest room with unexplored exit(s)
         backward_path = nearest_unexplored_exit(player.current_room.id)
